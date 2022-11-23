@@ -1,6 +1,6 @@
 # Práctico 10 - Electrónica II 2022 para ingeniería electrónica - Máquinas de estado finito
 
-El objetivo de este práctico es desarrollar un receptor de control remoto infrarrojo con código NEC. Incluyendo el desarrollo completo del proyecto de ghdl con testbench, Makefile para ejecutar banco de prueba y visualización con gtkwave.
+El objetivo de este práctico es desarrollar un receptor de control remoto infrarrojo con código NEC, incluyendo el desarrollo completo del proyecto de ghdl con testbench, Makefile para ejecutar banco de prueba y visualización con gtkwave.
 
 Dado la complejidad adicional se dará guía en clase de práctica y clases de consulta.
 
@@ -12,7 +12,7 @@ Para completar el práctico deberás generar un repositorio git que incluya, ade
 - `mingw32-make wav-receptor_ir` : Ejecuta el banco de pruebas guardando las formas de onda y luego ejecuta gtkwave para presentar el resultado.
 - `mingw32-make`                 : Hace lo mismo que `mingw32-make receptor_ir`
 
-Durante la elaboración de tu práctico utilizarás el sistema de control de versiones git y alojarás el resultado en github. Para ello debes crear una cuenta en github.com si on tienes una aún, crear un repositorio propio usando este como plantilla y clonar el nuevo repositorio en tu máquina para trabajar el repositorio en tu máquina será el repositorio de trabajo, el repositorio en la nube se denomina repositorio remoto. Guardarás tu progreso en tu repositorio de trabajo y publicaras los resultados (usando el comando push) en el repositorio remoto. Una vez consideres que tu práctico está completo te asegurrás que tu repositorio remoto sea público en github y enviarás como respuesta a la tarea correspondiente un enlace a dicho repositorio. Si debes realizar correcciones bastará con actualizar el repositorio remoto (pues el enlace siempre contendrá la versión más reciente y todas las anteriores que hayas guardado).
+Durante la elaboración de tu práctico utilizarás el sistema de control de versiones git y alojarás el resultado en github. Para ello debes crear una cuenta en github.com si no tienes una aún, crear un repositorio propio usando este como plantilla y clonar el nuevo repositorio en tu máquina. Para trabajar el repositorio en tu máquina será el repositorio de trabajo, el repositorio en la nube se denomina repositorio remoto. Guardarás tu progreso en tu repositorio de trabajo y publicaras los resultados (usando el comando push) en el repositorio remoto. Una vez consideres que tu práctico está completo te asegurrás que tu repositorio remoto sea público en github y enviarás como respuesta a la tarea correspondiente un enlace a dicho repositorio. Si debes realizar correcciones bastará con actualizar el repositorio remoto (pues el enlace siempre contendrá la versión más reciente y todas las anteriores que hayas guardado).
 
 Este práctico puede hacerse en grupos de hasta tres personas.
 
@@ -22,7 +22,7 @@ Es una máquina de estado finito que permite recibir comandos de un control remo
 
 ### El protocolo NEC
 
-El transmisor genera una señal infrarroja consistente pulsos infrarrojos modulados encendido-apagado (On Off Keying - OOK) con una frecuencia de 38 kHz. Los datos transmitidos se codifican usando **la duración del intervalo entre pulsos**. El módulo receptor tiene su salida normalmente en '1' y la salida toma el valor '0' cuando detecta la presencia de señal infrarroja de 38 kHz. Cada transmisión está formado por un inicio de transmisión, 8 bits de dirección y 8 bits de comando. Si el botón se mantiene presionado el control transmite un código de repetición en lugar de repetir la transmisión completa.
+El transmisor genera una señal infrarroja consistente en pulsos infrarrojos modulados encendido-apagado (On Off Keying - OOK) con una frecuencia de 38 kHz. Los datos transmitidos se codifican usando **la duración del intervalo entre pulsos**. El módulo receptor tiene su salida normalmente en '1' y la salida toma el valor '0' cuando detecta la presencia de señal infrarroja de 38 kHz. Cada transmisión está formado por un inicio de transmisión, 8 bits de dirección y 8 bits de comando. Si el botón se mantiene presionado el control transmite un código de repetición en lugar de repetir la transmisión completa.
 
 El inicio de transmisión consiste en un pulso de `9 ms` seguido de un espacio de `4,5 ms`. Luego del inicio de transmisión siguen 8 bits de la dirección, de LSb a MSb. Continúa con el complemento lógico de la dirección (siempre de LSb a MSb), los 8 bits del comando, el complemento lógico del comando y un pulso de fin. Un bit '0' consiste en un pulso de duración `Tp=562,5 μs` seguido de un espacio de la misma duración. Un bit '1' consiste en un pulso de duración `Tp` seguido de un espacio del triple de su duración (`3Tp=1,6875 ms`). El pulso de fin de transmisión es un pulso de duración `Tp`.
 
