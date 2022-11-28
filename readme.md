@@ -11,7 +11,7 @@ Para completar el práctico deberás generar un repositorio git que incluya, ade
 Todos los integrantes del grupo deben tener cuentas en GitHub. *Un solo integrante del grupo* debe crear el repositorio para el grupo.
 
 - Logueate en [Github](https://github.com), crea una cuenta si no tienes una.
-- Ve al [repositorio plantilla del TP10](https://github.com/fmirandabonomi/electronica_ii-tp10-maquinas-de-estado-finito) y crea un nuevo repositorio a partir de la plantilla.
+- Estando logueado ve al [repositorio plantilla del TP10](https://github.com/fmirandabonomi/electronica_ii-tp10-maquinas-de-estado-finito) y crea un nuevo repositorio a partir de la plantilla (se creará en tu cuenta).
 - Ve a la configuración del repositorio nuevo y añade como colaboradores a tus compañeros con sus usuarios de GitHub.
 - Clona el nuevo repositorio en tu máquina para empezar a trabajar.
 
