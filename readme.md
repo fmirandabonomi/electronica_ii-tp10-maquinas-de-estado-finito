@@ -6,7 +6,22 @@ Dado la complejidad adicional se dará guía en clase de práctica y clases de c
 
 ## Instrucciones para preparación y entrega del práctico
 
-Para completar el práctico deberás generar un repositorio git que incluya, además de este archivo, un banco de pruebas, un Makefile y una implementación. El código vhdl del banco de prueba debe estar en el archivo `testbench.vhd`. El código de la implementación (entidad y arquitectura) estará en el archivo `design.vhd`. Deberás preparar un archivo Makefile (Makefile) con los siguientes objetivos:
+Para completar el práctico deberás generar un repositorio git que incluya, además de este archivo, un banco de pruebas, un Makefile y una implementación.
+
+Todos los integrantes del grupo deben tener cuentas en GitHub. *Un solo integrante del grupo* debe crear el repositorio para el grupo.
+
+- Logueate en [Github](https://github.com), crea una cuenta si no tienes una.
+- Ve al [repositorio plantilla del TP10](https://github.com/fmirandabonomi/electronica_ii-tp10-maquinas-de-estado-finito) y crea un nuevo repositorio a partir de la plantilla.
+- Ve a la configuración del repositorio nuevo y añade como colaboradores a tus compañeros con sus usuarios de GitHub.
+- Clona el nuevo repositorio en tu máquina para empezar a trabajar.
+
+Para trabajar en el repositorio
+
+- Antes de empezar a trabajar debes traer la última versión del repositorio en la nube a tu máquina (pull).
+- Una vez hayas avanzado debes guardar los cambios en el repositorio de tu máquina (commit).
+- Luego debes enviar la nueva versión a la nube (push).
+
+El código vhdl del banco de prueba debe estar en el archivo `testbench.vhd`. El código de la implementación (entidad y arquitectura) estará en el archivo `design.vhd`. Deberás preparar un archivo Makefile (Makefile) con los siguientes objetivos:
 
 - `mingw32-make receptor_ir`     : Ejecuta el banco de pruebas presentando los resultados reportados.
 - `mingw32-make wav-receptor_ir` : Ejecuta el banco de pruebas guardando las formas de onda y luego ejecuta gtkwave para presentar el resultado.
